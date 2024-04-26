@@ -1,0 +1,6 @@
+<div *ngFor="let option of options" [ngClass]="{'active': option === value}" (click)="selectValue(option)">
+    {{ option }}
+</div>
+<div *ngIf="!options.length">
+    No options
+</div>

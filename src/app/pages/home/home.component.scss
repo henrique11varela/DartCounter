@@ -1,0 +1,9 @@
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+    width: 90vw;
+    &>app-button-select{
+        width: 100%;
+    }
+}

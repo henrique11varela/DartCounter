@@ -1,0 +1,24 @@
+<div class="page">
+    <div class="players">
+        <div class="player" [ngClass]="{'active-player': i == gameService.players.indexOf(selectedPlayer)}"
+            *ngFor="let player of gameService.players; index as i" (click)="selectPlayer(i)">
+            <div class="color" [ngStyle]="{'background-color': colors[i]}"></div>
+            <div>{{ player.points }}</div>
+            <div>{{ gameService.maxPoints - player.points }}</div>
+        </div>
+    </div>
+    <div class="controls">
+        <div class="select-number">
+            <app-button-select [(value)]="selectedPoints" [options]="pointOptions"></app-button-select>
+        </div>
+        <div class="buttons">
+            <button (click)="removePoints()">
+                <img src="assets/svg/minus.svg" alt="">
+            </button>
+            <button (click)="addPoints()">
+                <img src="assets/svg/plus.svg" alt="">
+            </button>
+        </div>
+    </div>
+</div>
+<div class="back" [routerLink]="['/home']"><b>&lt;</b></div>

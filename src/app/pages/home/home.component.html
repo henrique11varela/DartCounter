@@ -1,0 +1,10 @@
+<div class="page">
+    
+    <div class="controls">
+        <h1>Dart Counter</h1>
+        <app-button-select [options]="[1, 2, 3, 4]" [(value)]="gameService.qtyPlayers"></app-button-select>
+        <app-button-select [options]="[101, 301, 501]" [(value)]="gameService.maxPoints"></app-button-select>
+        <button (click)="startGame()">Start</button>
+        <button (click)="continueGame()">Continue</button>
+    </div>
+</div>
