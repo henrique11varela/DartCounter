@@ -1,3 +1,1 @@
-export const environment = {
-    firebaseConfig: {}
-}
+export const environment = {}
