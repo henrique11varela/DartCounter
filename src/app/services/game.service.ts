@@ -1,6 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Player } from '../model/player';
 
+type dart = {
+  points: number,
+  multiplier: number,
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,7 +15,23 @@ export class GameService {
   public maxPoints: number = 101;
   public qtyPlayers: number = 2;
   public players: Player[] = []
-  constructor() { 
+  public activeRound: (0 | 1 | 2) = 0
+  public rounds: [dart, dart, dart] = [
+    {
+      points: 0,
+      multiplier: 1
+    },
+    {
+      points: 0,
+      multiplier: 1
+    },
+    {
+      points: 0,
+      multiplier: 1
+    }
+  ]
+
+  constructor() {
     this.continueGame()
   }
 
@@ -21,12 +42,32 @@ export class GameService {
     }
     this.saveGame()
   }
-  public continueGame(){
+
+  public continueGame() {
     const tempArray: any[] = JSON.parse(localStorage.getItem(this.lsName) || '[]')
-    this.players = tempArray.map((item)=>new Player(item.points))
+    this.players = tempArray.map((item) => new Player(item.points))
   }
 
-  public saveGame(){
+  public saveGame() {
     localStorage.setItem(this.lsName, JSON.stringify(this.players))
   }
+
+  public resetGame() {
+    this.activeRound = 0
+    this.rounds = [
+      {
+        points: 0,
+        multiplier: 1
+      },
+      {
+        points: 0,
+        multiplier: 1
+      },
+      {
+        points: 0,
+        multiplier: 1
+      }
+    ]
+  }
+
 }

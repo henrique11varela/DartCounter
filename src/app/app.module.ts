@@ -7,13 +7,15 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { HomeComponent } from './pages/home/home.component';
 import { CounterComponent } from './pages/counter/counter.component';
 import { ButtonSelectComponent } from './shared/button-select/button-select.component';
+import { PointButtonsComponent } from './pages/counter/point-buttons/point-buttons.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     CounterComponent,
-    ButtonSelectComponent
+    ButtonSelectComponent,
+    PointButtonsComponent
   ],
   imports: [
     BrowserModule,

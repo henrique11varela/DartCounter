@@ -1,0 +1,46 @@
+* {
+  user-select: none;
+}
+
+dialog {
+  background-color: transparent;
+  border: none;
+  outline: none;
+}
+
+.btn {
+  color: white;
+  border: black 1px solid;
+  text-align: center;
+  background-color: var(--primary);
+  padding: .5em;
+  border-radius: .5em;
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #44444444;
+  z-index: 1000;
+}
+
+.multiplier {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1001;
+  display: flex;
+  overflow: hidden;
+  background-color: #fff;
+  border: black 1px solid;
+  border-radius: .5em;
+
+  &>div {
+    padding: 1em;
+    border: black 1px solid;
+  }
+}

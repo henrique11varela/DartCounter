@@ -1,24 +1,30 @@
 <div class="page">
-    <div class="players">
-        <div class="player" [ngClass]="{'active-player': i == gameService.players.indexOf(selectedPlayer)}"
-            *ngFor="let player of gameService.players; index as i" (click)="selectPlayer(i)">
-            <div class="color" [ngStyle]="{'background-color': colors[i]}"></div>
-            <div>{{ player.points }}</div>
-            <div>{{ gameService.maxPoints - player.points }}</div>
-        </div>
+  <div class="players">
+    <div class="player" [ngClass]="{'active-player': i == gameService.players.indexOf(selectedPlayer)}"
+      *ngFor="let player of gameService.players; index as i" (click)="selectPlayer(i)">
+      <div class="color" [ngStyle]="{'background-color': colors[i]}"></div>
+      <div>{{ player.points }}</div>
+      <div>{{ gameService.maxPoints - player.points }}</div>
     </div>
-    <div class="controls">
-        <div class="select-number">
-            <app-button-select [(value)]="selectedPoints" [options]="pointOptions"></app-button-select>
-        </div>
-        <div class="buttons">
-            <button (click)="removePoints()">
-                <img src="assets/svg/minus.svg" alt="">
-            </button>
-            <button (click)="addPoints()">
-                <img src="assets/svg/plus.svg" alt="">
-            </button>
-        </div>
+  </div>
+  <div class="controls">
+    <!-- points -->
+    <div class="display">
+      <div *ngFor="let r of gameService.rounds; index as i" [ngClass]="{'active-player': i == gameService.activeRound}" (click)="selectRound(i)"><b>{{ r.points }}</b> x{{ r.multiplier }}</div>
     </div>
+    <!-- selector -->
+    <div class="points">
+      <app-point-buttons *ngFor="let opt of pointOptions" [points]="opt" [multipliers]="(opt != 0 && opt != 25 && opt != 50) ? [1, 2, 3] : []"></app-point-buttons>
+    </div>
+    <!-- submit -->
+    <div class="buttons">
+      <button (click)="reset()">
+        Reset
+      </button>
+      <button (click)="submit()">
+        Submit
+      </button>
+    </div>
+  </div>
 </div>
 <div class="back" [routerLink]="['/home']"><b>&lt;</b></div>
