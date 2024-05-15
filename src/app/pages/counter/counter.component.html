@@ -2,7 +2,7 @@
   <div class="players">
     <div class="player" [ngClass]="{'active-player': i == gameService.selectedPlayer}"
       *ngFor="let player of [].constructor(gameService.qtyPlayers); index as i" (click)="selectPlayer(i)">
-      <div class="color" [ngStyle]="{'background-color': colors[i]}"></div>
+      <div class="color" [ngStyle]="{'background-color': gameService.colors[i]}"></div>
       <div>{{ gameService.pointsOf(i) }}</div>
       <div>{{ gameService.maxPoints - gameService.pointsOf(i) }}</div>
     </div>
@@ -27,5 +27,5 @@
     </div>
   </div>
 </div>
-<div class="history" (click)="history()">H</div>
+<div class="history" [routerLink]="['/history']">H</div>
 <div class="back" [routerLink]="['/home']"><b>&lt;</b></div>

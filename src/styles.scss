@@ -22,7 +22,7 @@ button {
     border: 1px solid var(--dark);
     color: var(--light);
 
-    &>img{
+    &>img {
         height: 1em;
         filter: invert(100%);
     }
@@ -32,4 +32,46 @@ h1 {
     margin: 0;
     padding-bottom: .25em;
     border-bottom: 2px solid var(--secondary);
+}
+
+.back {
+    position: fixed;
+    left: 1em;
+    bottom: 1em;
+    width: 2em;
+    height: 2em;
+    background-color: var(--primary);
+    border-radius: 50%;
+    color: var(--light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bg {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #44444444;
+    z-index: 1000;
+}
+
+dialog {
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+dialog>.innerDialog {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    padding: 1em;
+    outline: black 1px solid;
+    border-radius: 1em;
+    background-color: #fff;
 }

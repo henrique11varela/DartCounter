@@ -12,6 +12,7 @@ type dart = {
 export class GameService {
   private lsName = 'dartGame'
 
+  public colors: string[] = ['#f52e2e', '#5463ff', '#ffc717', '#1f9e40']
   public maxPoints: number = 101;
 
   public qtyPlayers: number = 2;
@@ -115,6 +116,11 @@ export class GameService {
         multiplier: 1
       }
     ]
+  }
+
+  public deleteHistoryAt(index: number) {
+    this.history.splice(index, 1)
+    this.saveGame()
   }
 
 }

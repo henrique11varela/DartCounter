@@ -8,6 +8,7 @@ import { HomeComponent } from './pages/home/home.component';
 import { CounterComponent } from './pages/counter/counter.component';
 import { ButtonSelectComponent } from './shared/button-select/button-select.component';
 import { PointButtonsComponent } from './pages/counter/point-buttons/point-buttons.component';
+import { HistoryComponent } from './pages/history/history.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { PointButtonsComponent } from './pages/counter/point-buttons/point-butto
     HomeComponent,
     CounterComponent,
     ButtonSelectComponent,
-    PointButtonsComponent
+    PointButtonsComponent,
+    HistoryComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,37 @@
+.page {
+    padding: 1em;
+}
+
+h1 {
+    margin-bottom: .5em;
+}
+
+.turn {
+    position: relative;
+    width: 90vw;
+    border: black 1px solid;
+    display: flex;
+    justify-content: space-around;
+    padding: 1em 0;
+    margin-bottom: 1em;
+}
+
+.color {
+    width: 1em;
+    height: 1em;
+    border-radius: 50%;
+}
+
+.btn {
+    color: white;
+    border: black 1px solid;
+    text-align: center;
+    background-color: var(--primary);
+    padding: .5em;
+    border-radius: .5em;
+}
+
+.reversed {
+    display: flex;
+    flex-direction: column-reverse;
+}

@@ -12,7 +12,7 @@ export class CounterComponent {
   // public selectedPlayer: Player = this.gameService.players[0]
   public pointOptions: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 25, 50, 0]
   public selectedPoints: number = 1
-  public colors: string[] = ['#f52e2e', '#5463ff', '#ffc717', '#1f9e40']
+  
 
   constructor(public gameService: GameService) { }
 

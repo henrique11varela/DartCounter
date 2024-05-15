@@ -1,0 +1,20 @@
+<div class="page">
+    <h1>HISTORY</h1>
+    <div class="reversed">
+        <div *ngFor="let turn of gameService.history; index as i" class="turn" (click)="selectH(i)">
+            <div class="color" [ngStyle]="{'background-color': gameService.colors[turn.player]}"></div>
+            <div>{{ turn.game[0].points }} x{{ turn.game[0].multiplier }}</div>
+            <div>{{ turn.game[1].points }} x{{ turn.game[1].multiplier }}</div>
+            <div>{{ turn.game[2].points }} x{{ turn.game[2].multiplier }}</div>
+        </div>
+    </div>
+</div>
+<div class="back" [routerLink]="['/counter']"><b>&lt;</b></div>
+<dialog #opts>
+    <div (click)="closeDialog()" class="bg"></div>
+    <div class="innerDialog">
+        <div (click)="deleteTurn()" class="btn">
+            DELETE?
+        </div>
+    </div>
+</dialog>
