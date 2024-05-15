@@ -16,7 +16,7 @@ export class PointButtonsComponent {
   onDown(event: Event) {
     this.timer = setTimeout(() => {
       this.openDialog(event)
-    }, 1000)
+    }, 500)
   }
 
   onUp(event: Event) {
