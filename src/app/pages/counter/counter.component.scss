@@ -72,6 +72,19 @@
 
 .back {
   position: fixed;
+  left: 1em;
+  bottom: 1em;
+  width: 2em;
+  height: 2em;
+  background-color: var(--primary);
+  border-radius: 50%;
+  color: var(--light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.history {
+  position: fixed;
   right: 1em;
   bottom: 1em;
   width: 2em;

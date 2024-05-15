@@ -1,9 +1,9 @@
-<div (click)="openDialog($event)" class="btn">
+<div (click)="select($event)" (contextmenu)="returnFalse()" (touchstart)="onDown($event)" (touchend)="onUp($event)" class="btn">
   {{ points }}
 </div>
 
 <dialog #dialog>
-  <div (click)="closeDialog($event)" class="bg"></div>
+  <div (click)="closeDialog($event)" (contextmenu)="returnFalse()" class="bg"></div>
   <div class="multiplier">
     <div *ngFor="let m of multipliers" (click)="select($event, m)">x{{ m }}</div>
   </div>
