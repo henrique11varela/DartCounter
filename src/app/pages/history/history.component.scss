@@ -34,4 +34,7 @@ h1 {
 .reversed {
     display: flex;
     flex-direction: column-reverse;
+    position: fixed;
+    top: 0;
+    justify-content: start;
 }
